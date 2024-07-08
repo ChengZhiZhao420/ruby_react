@@ -1,0 +1,29 @@
+<h1>
+    Driver Information
+</h1>
+
+<%= turbo_frame_tag "driver" do %>
+    <ul>
+        <li>
+            Driver Name: <%= @driver.driverName %>
+        </li>
+        <li>
+            Auth. No: <%= @driver.authNo %>
+        </li>
+        <li>
+            Licence: <%= @driver.licence %>
+        </li>
+        <li>
+            Security Check In Time: <%= @driver.securityCheckIn %>
+        </li>
+        <li>
+            Counter Check In Time: <%= @driver.counterCheckIn %>
+        </li>
+        <li>
+            Dock Door: <%= @driver.dockDoor %>
+        </li>
+    </ul>
+    
+    <%= link_to "Home", drivers_path, "data-turbo-frame": "_top" %>
+    <%= link_to "Edit", edit_driver_path %>
+<% end %>

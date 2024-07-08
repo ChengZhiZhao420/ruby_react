@@ -1,0 +1,33 @@
+<%= form_with model: driver, data:{controller: "reset_form", action: "turbo:submit-end->reset_form#reset"} do |f| %>
+    <div>
+        <%= f.label :driverName, "Driver Name" %>
+        <%= f.text_field :driverName %>
+    </div>
+
+    <div>
+        <%= f.label :authNo, "Auth No" %>
+        <%= f.text_field :authNo %>
+    </div>
+
+    <div>
+        <%= f.label :licence, "Licence" %>
+        <%= f.text_field :licence %>
+    </div>
+
+    <div>
+        <%= f.label :securityCheckIn, "Security Check In Time" %>
+        <%= f.datetime_field  :securityCheckIn %>
+    </div>
+
+    <div>
+        <%= f.label :counterCheckIn, "Counter Check In Time" %>
+        <%= f.datetime_field  :counterCheckIn %>
+    </div>
+
+     <div>
+        <%= f.label :dockDoor, "Dock Door" %>
+        <%= f.text_field  :dockDoor %>
+    </div>
+
+    <%= f.submit "Submit", disable_with: 'Submiting...' %>
+<% end %>

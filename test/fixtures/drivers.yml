@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  driverName: MyString
+  atuhNo: MyText
+  licence: MyString
+  securityCheckIn: 2024-07-06 00:26:01
+  counterCheckIn: 2024-07-06 00:26:01
+  dockDoor: MyString
+
+two:
+  driverName: MyString
+  atuhNo: MyText
+  licence: MyString
+  securityCheckIn: 2024-07-06 00:26:01
+  counterCheckIn: 2024-07-06 00:26:01
+  dockDoor: MyString

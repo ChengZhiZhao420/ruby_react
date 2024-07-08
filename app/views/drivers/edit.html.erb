@@ -1,0 +1,5 @@
+<%= turbo_frame_tag "driver" do %>
+    <%= render "form", driver:@driver %>
+<% end %>
+
+<%= link_to "Back", driver_path(@driver) %>
