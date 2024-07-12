@@ -1,0 +1,36 @@
+<h1>BOL Filter</h1>
+<%= search_form_for @q, url: bol_assigment_path, method: :get, html: {"data-controller": "submit_form", "data-turbo-frame": "bol_filter" } do |f| %>
+    <div class="field grid grid-column-2">
+        <%= f.label :BOLNOCOMPANY_cont, "BOL#" %>
+        <%= f.text_field :BOLNOCOMPANY_cont, "data-action": "submit_form#submit" %>
+    </div>
+    <div class="field grid grid-column-2">
+        <%= f.label :REFERENCE_cont, "Auth.#" %>
+        <%= f.text_field :REFERENCE_cont, "data-action": "submit_form#submit" %>
+    </div>
+    <div class="field grid grid-column-2">
+        <%= f.label :BOLSHIPDATE_gteq, "Ship Date From" %>
+        <%= f.date_field :BOLSHIPDATE_gteq, "data-action": "submit_form#submit" %>
+    </div>
+    <div class="field grid grid-column-2">
+        <%= f.label :BOLSHIPDATE_lteq, "Ship Date To" %>
+        <%= f.date_field :BOLSHIPDATE_lteq, "data-action": "submit_form#submit" %>
+    </div>
+    <div class="hidden">
+        <%= label_tag :custom_field, "Custom Field" %>
+        <%= text_field_tag :custom_field, nil, data: { action: "submit_form#submit" } %>
+    </div>
+<% end %>
+<h1>Driver Filter</h1>
+<%= search_form_for @k, url: bol_assigment_path, method: :get, html: {"data-controller": "submit_form", "data-turbo-frame": "driver_filter" }  do |f| %>
+    <div class="field grid grid-column-2">
+        <%= f.label :authNo_cont, "Auth.#" %>
+        <%= f.text_field :authNo_cont, "data-action": "submit_form#submit" %>
+    </div>
+    <div class="field grid grid-column-2">
+        <%= f.label :driverName_cont, "Driver Name" %>
+        <%= f.text_field :driverName_cont, "data-action": "submit_form#submit" %>
+    </div>
+<% end %>
+
+<input type="submit" value="Assign Load" form="assignLoad" class='bg-blue-500 text-white font-bold py-2 px-4 rounded'>

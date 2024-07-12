@@ -9,4 +9,10 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :drivers
+
+  get "/bol", to: "customer_bol_shipments#index"
+
+  get "/bolassignment", to: "bol_assignment_tool#index", as: "bol_assigment"
+
+  post "/bolassignment/assign", to: "bol_assignment_tool#assignLoad", as: "assign_load"
 end

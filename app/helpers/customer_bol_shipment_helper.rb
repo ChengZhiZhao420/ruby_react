@@ -1,0 +1,2 @@
+module CustomerBolShipmentHelper
+end

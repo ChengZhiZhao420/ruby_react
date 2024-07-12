@@ -1,0 +1,30 @@
+<% 
+  loading_list = LoadingList.find_by(bolno: customer_bol_shipment.BOLNO) 
+  driver = loading_list.present? ? Driver.find_by(id: loading_list[:driver]) : nil
+%>
+<tr class="<%= driver.nil? ? '' : 'bg-green-500' %>">
+  <td class="border border-slate-300">
+    <% if driver.nil? %>
+      <%= check_box_tag 'customer_bol_shipment_ids[]', customer_bol_shipment.BOLNO %>
+    <% end %>
+  </td>
+  <td class="border border-slate-300"><%= customer_bol_shipment.BOLSHIPDATE.strftime("%m-%d-%Y") %></td>
+  <td class="border border-slate-300">
+    <%= customer_bol_shipment.SCHEDULEDPICKUPDATE != Time.utc(1900,1,1,0,0,0) ? customer_bol_shipment.SCHEDULEDPICKUPDATE.strftime("%m-%d-%Y") : "" %>
+  </td>
+  <td class="border border-slate-300"><%= customer_bol_shipment.BOLNOCOMPANY %></td>
+  <td class="border border-slate-300"><%= customer_bol_shipment.MASTERBOL %></td>
+  <td class="border border-slate-300"><%= customer_bol_shipment.REFERENCE %></td>
+  <td class="border border-slate-300"><%= customer_bol_shipment.BOLREFERENCE2 %></td>
+  <td class="border border-slate-300"><%= customer_bol_shipment.CUSTOMER %></td>
+  <td class="border border-slate-300"><%= customer_bol_shipment.TOTALCARTONS %></td>
+  <% if driver %>
+    <td class="border border-slate-300"><%= driver[:driverName] %></td>
+    <td class="border border-slate-300"><%= driver[:dockDoor] %></td>
+    <td class="border border-slate-300"></td>
+  <% else %>
+    <td class="border border-slate-300"></td>
+    <td class="border border-slate-300"></td>
+    <td class="border border-slate-300"></td>
+  <% end %>
+</tr>

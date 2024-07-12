@@ -1,0 +1,50 @@
+
+<%= turbo_frame_tag "bol_filter" do %>
+    <table class="border-collapse border border-slate-400" id="customer_bol_table">
+        <thead>
+            <tr>
+                <td class="border border-slate-300">
+                    Select
+                </td>
+                <td class="border border-slate-300">
+                    Ship On Date
+                </td>
+                <td class="border border-slate-300">
+                    Cfm Ship On Date
+                </td>
+                <td class="border border-slate-300">
+                    BOL No
+                </td>
+                <td class="border border-slate-300"> 
+                    Master BOL No
+                </td>
+                <td class="border border-slate-300">
+                    Auth. No
+                </td>
+                <td class="border border-slate-300">
+                    Load No
+                </td>
+                <td class="border border-slate-300">
+                    Customer
+                </td>
+                <td class="border border-slate-300">
+                    Order Cartons
+                </td>
+                <td class="border border-slate-300">
+                    Dock Door
+                </td>
+                <td class="border border-slate-300">
+                    Driver Name
+                </td>
+                <td class="border border-slate-300">
+                    Remove
+                </td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <%= render @customer_bol_shipments %>
+        </tbody>
+    </table>
+    <%= paginate @customer_bol_shipments %>
+<% end %>

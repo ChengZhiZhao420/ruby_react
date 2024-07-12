@@ -1,0 +1,26 @@
+<%= turbo_stream_from "drivers" %>
+
+<%= turbo_frame_tag "driver_filter" do %>
+    <table class="border-collapse border border-slate-400">
+        <thead>
+            <tr>
+                <td class="border border-slate-300" >Select</td>
+                <td class="border border-slate-300">Driver Name</td>
+                <td class="border border-slate-300">Auth. No</td>
+                <td class="border border-slate-300">Licence</td>
+                <td class="border border-slate-300">Security Check In Time</td>
+                <td class="border border-slate-300">Counter Check In</td>
+                <td class="border border-slate-300">Dock Door</td>
+            </tr>
+        </thead>
+        <tbody id="drivers">
+            <%= render @drivers %>
+        </tbody>
+    </table>
+ <% end %>
+ 
+
+<%# <%= turbo_frame_tag "new_driver" do %>
+    <%#<%= link_to "New Driver", new_driver_path %> 
+<%#<% end %>
+

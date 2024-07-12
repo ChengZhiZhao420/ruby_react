@@ -1,0 +1,38 @@
+<%= turbo_frame_tag "bolassignment" do %>
+<div class="text-white h-screen">
+    <div class="bg-darkorange text-4xl flex items-center justify-center">
+        <h1>
+            BOL Assignment Tool
+        </h1>
+    </div>
+
+    <div class="grid grid-cols-4 pt-4 h-screen text-black">
+        <div class="max-w-80 col-span-1 rounded overflow-hidden shadow-lg bg-white p-8">
+            <%= render "filter_forms" %>
+        </div>
+
+        <div class="rounded overflow-hidden shadow-lg bg-white p-8 col-span-3">
+            <form action="/bolassignment/assign" class="grid grid-cols-1 h-full" id="assignLoad" method="post">
+                <div>
+                    <h1>
+                        Driver Information
+                    </h1>
+                    <%= render partial: "drivers/index" %>
+                    <%= turbo_frame_tag "driver", class: "hidden", data: { controller: "show_frame" } %>
+                </div>
+                
+                <div>
+                    <h1>
+                        Bol Information
+                    </h1>
+                    <%= render partial: "customer_bol_shipments/index" %>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+
+    
+</div>
+
+<% end %>

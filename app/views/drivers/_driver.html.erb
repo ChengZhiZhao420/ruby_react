@@ -1,12 +1,16 @@
-<tr id="driver_<%= driver.id %>">
-    <td><input type="checkbox" name="" id=""><%= link_to "Delete", driver_path(driver), data: {
+<tr id="driver_<%= driver.id %>" data-controller="driver_filter">
+    <td class="border border-slate-300"> <%= check_box_tag 'driver_ids[]', driver.id %></td>
+    <td class="border border-slate-300">
+      <button type="button" data-action="driver_filter#click" value="<%= driver.id %>"><%= driver.driverName %></button>
+    </td>
+    <td class="border border-slate-300"><%= driver.authNo %></td>
+    <td class="border border-slate-300"><%= driver.licence %></td>
+    <td class="border border-slate-300"><%= driver.securityCheckIn %></td>
+    <td class="border border-slate-300"><%= driver.counterCheckIn %></td>
+    <td class="border border-slate-300"><%= driver.dockDoor %></td>
+</tr>
+
+<%# <%= link_to "Delete", driver_path(driver), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
-                  } %></td>
-    <td><%= link_to driver.driverName, driver_path(driver) %> </td>
-    <td><%= driver.authNo %></td>
-    <td><%= driver.licence %></td>
-    <td><%= driver.securityCheckIn %></td>
-    <td><%= driver.counterCheckIn %></td>
-    <td><%= driver.dockDoor %></td>
-</tr>
+                  } %> 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_06_072601) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_11_070333) do
   create_table "drivers", force: :cascade do |t|
     t.string "driverName"
     t.text "authNo"
@@ -18,6 +18,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_06_072601) do
     t.datetime "securityCheckIn"
     t.datetime "counterCheckIn"
     t.string "dockDoor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "loading_lists", force: :cascade do |t|
+    t.integer "driver"
+    t.integer "bolno"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

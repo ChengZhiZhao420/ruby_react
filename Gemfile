@@ -65,3 +65,13 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem 'activerecord-sqlserver-adapter'
+gem 'tiny_tds'
+
+gem "tailwindcss-rails", "~> 2.6"
+
+gem 'kaminari'
+
+gem 'ransack'
+

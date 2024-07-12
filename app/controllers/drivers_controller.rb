@@ -9,6 +9,10 @@ class DriversController < ApplicationController
 
     def show
         get_driver
+        respond_to do |format|
+          format.html {render partial: 'details', locals: {driver: @driver}}
+          format.turbo_stream
+        end
     end
 
     def create
